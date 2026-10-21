@@ -1,0 +1,59 @@
+.wp-block-column.nea-column-has-link {
+	position: relative;
+	z-index: 0;
+}
+
+.wp-block-column.nea-column-has-link > .nea-column-link {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	border-radius: inherit;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.wp-block-column.nea-column-has-link > .nea-column-link:focus-visible {
+	outline: 2px solid;
+	outline-offset: -2px;
+}
+
+/* The link sits under the content. Clicks pass through non-interactive
+   content and land on it. Real controls opt back in so they stay clickable. */
+.wp-block-column.nea-column-has-link > :not(.nea-column-link),
+.wp-block-column.nea-column-has-link > :not(.nea-column-link) * {
+	pointer-events: none;
+}
+
+.wp-block-column.nea-column-has-link > :not(.nea-column-link) :is(
+	a,
+	button,
+	input,
+	textarea,
+	select,
+	summary,
+	label,
+	iframe,
+	video,
+	audio,
+	embed,
+	object,
+	area,
+	[contenteditable="true"],
+	[tabindex]:not([tabindex="-1"]),
+	[role="button"],
+	[role="link"],
+	[role="tab"],
+	[role="switch"],
+	[role="checkbox"],
+	[role="radio"],
+	[role="menuitem"],
+	[role="option"],
+	[role="slider"],
+	[role="textbox"],
+	[role="combobox"],
+	[role="searchbox"],
+	[role="listbox"]
+) {
+	position: relative;
+	pointer-events: auto;
+}

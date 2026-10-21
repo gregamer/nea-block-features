@@ -1,0 +1,8 @@
+/* Save this as block-visibility-options.css */
+.gutenberg .block-hidden { display: none !important; }
+
+/* mark elements in editor */
+.is-root-container .hide-mobile {opacity: 0.4;}
+.is-root-container .hide-tablet {opacity: 0.4;}
+.is-root-container .hide-desktop {opacity: 0.4;}
+.is-root-container .block-hidden{opacity: 0.2;}
