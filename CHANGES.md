@@ -1,3 +1,6 @@
+#### 1.0.1 / 29-10-2026
+* Uskladitev z neAGENCIJA pravili: glava, meni, text domain in pakiranje izdaje.
+
 #### 0.0.17 / 24-10-2025
 * Dodan skupni meni neAGENCIJA
 

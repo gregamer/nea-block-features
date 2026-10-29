@@ -1,23 +1,23 @@
 <?php
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {die;}
 /**
- *
- * @link              https://www.neagencija.si
- * @package           nea_block_features
- *
- * @wordpress-plugin
- * Plugin Name:       NEA dodatne funkcionalnosti Gutenberg blokov
- * Plugin URI:        https://github.com/gregamer/nea-block-features
+ * Plugin Name: neAGENCIJA dodatne funkcionalnosti Gutenberg blokov
+ * Description: Front-end modifikacije za razlicne plugine in funkcionalnosti
+ * Version: 1.0.1
+ * Author: neAGENCIJA
+ * Text Domain: nea-block-features
+ * Domain Path: /lang
+ * Requires at least: 6.0
+ * Requires PHP: 7.4
  * GitHub Plugin URI: https://github.com/gregamer/nea-block-features
- * Primary Branch:    main
- * Description:       Front-end modifikacije za razlicne plugine in funkcionalnosti
- * Version:           0.1.1
- * Author:            Gregor Mercina
- * Author URI:        https://www.neagencija.si
- * Text Domain:       nea_block_features
- * Domain Path:       /lang
+ * Primary Branch: main
+ * Release Asset: true
  */
+
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+define( 'NEA_BLOCK_FEATURES_VERSION', '1.0.1' );
 
 
 
@@ -25,13 +25,11 @@ if ( ! defined( 'WPINC' ) ) {die;}
 $isAdmin = is_admin();
 
 class nea_block_features {
-	public $plugin_slug = "nea_block_features";
-    public $plugin_name = "NEA dodatne funkcionalnosti Gutenberg blokov";
-	//public $plugin_slug;
-	
+	public $plugin_slug = 'nea-block-features';
+	public $plugin_name = 'neAGENCIJA dodatne funkcionalnosti Gutenberg blokov';
+
 	public function __construct() {
-		// load lang
-		load_plugin_textdomain('nea_block_features', false, plugin_dir_path( __FILE__ ) . '/lang');
+		load_plugin_textdomain( 'nea-block-features', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 
 		// Hook into the admin
 		add_action( 'admin_menu', array( $this, 'add_plugin_menu' ), 999 );
@@ -39,31 +37,29 @@ class nea_block_features {
 		// add_action( 'admin_menu', array( $this, 'add_gfonts_menu' ) );
 	}
 
-	public function add_plugin_menu() {	
-		// Add the menu item and page
-		$page_title = $this->plugin_name;
-		$menu_title = $this->plugin_name;
-		$capability = 'administrator';
-		$slug 		= $this->plugin_slug;
-		$callback 	= array( $this, 'create_admin_page' );
-		$icon 		= 'dashicons-plugins';
-		$position 	= 100;
-		
+	public function add_plugin_menu() {
 		$this->ensure_neagencija_menu();
-		add_submenu_page('neagencija', $page_title, $menu_title, $capability, $slug, $callback );
+		add_submenu_page(
+			'neagencija',
+			'dodatne funkcionalnosti Gutenberg blokov',
+			'dodatne funkcionalnosti Gutenberg blokov',
+			'manage_options',
+			$this->plugin_slug,
+			array( $this, 'create_admin_page' )
+		);
 	}
 
 	private function ensure_neagencija_menu() {
 		global $admin_page_hooks;
 		if ( empty( $admin_page_hooks['neagencija'] ) ) {
 			add_menu_page(
-				__('neAGENCIJA', 'nea_block_features'),
-				__('neAGENCIJA', 'nea_block_features'),
+				'neAGENCIJA',
+				'neAGENCIJA',
 				'manage_options',
 				'neagencija',
-				array($this, 'render_neagencija_root'),
+				array( $this, 'render_neagencija_root' ),
 				'dashicons-admin-generic',
-				2
+				30
 			);
 		}
 	}

@@ -119,7 +119,7 @@ class Block_Column_Link {
 		$title = ( isset( $link['title'] ) && is_string( $link['title'] ) ) ? trim( wp_strip_all_tags( $link['title'] ) ) : '';
 		$label = '' !== $title ? $title : $url;
 		if ( $opens_in_new_tab ) {
-			$label .= ' (' . __( 'odpre se v novem zavihku', 'nea_block_features' ) . ')';
+			$label .= ' (' . __( 'odpre se v novem zavihku', 'nea-block-features' ) . ')';
 		}
 
 		$attributes = sprintf( ' href="%s" aria-label="%s"', $href, esc_attr( $label ) );

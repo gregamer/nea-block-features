@@ -103,7 +103,7 @@
                 ? createElement(LinkControl, {
                     key: props.clientId,
                     value: hasUrl ? linkValue : undefined,
-                    searchInputPlaceholder: __('Išči stran ali vnesi URL', 'nea_block_features'),
+                    searchInputPlaceholder: __('Išči stran ali vnesi URL', 'nea-block-features'),
                     settings: [],
                     onChange: storeLink,
                     onRemove: function () {
@@ -111,7 +111,7 @@
                     }
                 })
                 : createElement(TextControl, {
-                    label: __('URL povezave', 'nea_block_features'),
+                    label: __('URL povezave', 'nea-block-features'),
                     value: link.url || '',
                     onChange: function (url) {
                         storeLink({ url: url, title: link.title || '' });
@@ -128,25 +128,25 @@
                     createElement(
                         PanelBody,
                         {
-                            title: __('Povezava stolpca', 'nea_block_features'),
+                            title: __('Povezava stolpca', 'nea-block-features'),
                             initialOpen: hasUrl
                         },
                         hasUrl
                             ? createElement(
                                 Notice,
                                 { status: 'info', isDismissible: false },
-                                __('Stolpec ima nastavljeno povezavo.', 'nea_block_features')
+                                __('Stolpec ima nastavljeno povezavo.', 'nea-block-features')
                             )
                             : null,
                         createElement(
                             'p',
                             { className: 'components-base-control__help' },
-                            __('Na spletnem mestu klik na prosto površino stolpca odpre povezavo. Povezave in gumbi znotraj stolpca ostanejo samostojni. V urejevalniku je stolpec še naprej urejljiv.', 'nea_block_features')
+                            __('Na spletnem mestu klik na prosto površino stolpca odpre povezavo. Povezave in gumbi znotraj stolpca ostanejo samostojni. V urejevalniku je stolpec še naprej urejljiv.', 'nea-block-features')
                         ),
                         urlControl,
                         createElement(ToggleControl, {
-                            label: __('Odpri v novem zavihku', 'nea_block_features'),
-                            help: __('Doda target="_blank" in rel="noopener noreferrer".', 'nea_block_features'),
+                            label: __('Odpri v novem zavihku', 'nea-block-features'),
+                            help: __('Doda target="_blank" in rel="noopener noreferrer".', 'nea-block-features'),
                             checked: !!link.opensInNewTab,
                             onChange: function (checked) {
                                 props.setAttributes({
@@ -155,8 +155,8 @@
                             }
                         }),
                         createElement(ToggleControl, {
-                            label: __('Nofollow', 'nea_block_features'),
-                            help: __('Doda nofollow v atribut rel.', 'nea_block_features'),
+                            label: __('Nofollow', 'nea-block-features'),
+                            help: __('Doda nofollow v atribut rel.', 'nea-block-features'),
                             checked: !!link.nofollow,
                             onChange: function (checked) {
                                 props.setAttributes({

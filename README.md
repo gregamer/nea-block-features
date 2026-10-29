@@ -1,4 +1,4 @@
-# NEA dodatne funkcionalnosti Gutenberg blokov
+# neAGENCIJA dodatne funkcionalnosti Gutenberg blokov
 
 WordPress vtičnik za dodatne možnosti blokov in prikaz shranjenih vzorcev.
 
