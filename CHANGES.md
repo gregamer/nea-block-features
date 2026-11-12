@@ -1,3 +1,7 @@
+#### 1.0.2 / 12-11-2026
+* Preimenovanje v neAGENCIJA Gutenberg Features.
+* Prag za pomanjšanje slik je prestavljen v nea-wp-features.
+
 #### 1.0.1 / 29-10-2026
 * Uskladitev z neAGENCIJA pravili: glava, meni, text domain in pakiranje izdaje.
 

@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: neAGENCIJA dodatne funkcionalnosti Gutenberg blokov
+ * Plugin Name: neAGENCIJA Gutenberg Features
  * Description: Front-end modifikacije za razlicne plugine in funkcionalnosti
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: neAGENCIJA
  * Text Domain: nea-block-features
  * Domain Path: /lang
@@ -17,7 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'NEA_BLOCK_FEATURES_VERSION', '1.0.1' );
+define( 'NEA_BLOCK_FEATURES_VERSION', '1.0.2' );
 
 
 
@@ -26,7 +26,7 @@ $isAdmin = is_admin();
 
 class nea_block_features {
 	public $plugin_slug = 'nea-block-features';
-	public $plugin_name = 'neAGENCIJA dodatne funkcionalnosti Gutenberg blokov';
+	public $plugin_name = 'neAGENCIJA Gutenberg Features';
 
 	public function __construct() {
 		load_plugin_textdomain( 'nea-block-features', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
@@ -41,8 +41,8 @@ class nea_block_features {
 		$this->ensure_neagencija_menu();
 		add_submenu_page(
 			'neagencija',
-			'dodatne funkcionalnosti Gutenberg blokov',
-			'dodatne funkcionalnosti Gutenberg blokov',
+			'Gutenberg Features',
+			'Gutenberg Features',
 			'manage_options',
 			$this->plugin_slug,
 			array( $this, 'create_admin_page' )
@@ -89,8 +89,6 @@ class nea_block_features {
 	
 }
 new nea_block_features();
-
-include( plugin_dir_path( __FILE__ ) . '/includes/_media.php');
 
 if ( get_option( 'nea_block_features_enable_block_visibility', '1' ) ) {
 	include( plugin_dir_path( __FILE__ ) . '/includes/_block-visibility-options.php');

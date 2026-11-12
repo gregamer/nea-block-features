@@ -1,8 +1,8 @@
-# neAGENCIJA dodatne funkcionalnosti Gutenberg blokov
+# neAGENCIJA Gutenberg Features
 
 WordPress vtičnik za dodatne možnosti blokov in prikaz shranjenih vzorcev.
 
-Nastavitve so v adminu pod menijem **neAGENCIJA**. Funkcije s kljukico so privzeto vklopljene. Prag za pomanjšanje slik je vedno vklopljen.
+Nastavitve so v adminu pod menijem **neAGENCIJA**. Funkcije s kljukico so privzeto vklopljene.
 
 ## Vidnost blokov
 
@@ -30,9 +30,3 @@ Izpiše shranjen sinhroniziran vzorec (`wp_block`):
 ```
 
 Slug je pot iz naslova vzorca. Če je aktiven WPML, se uporabi prevod.
-
-## Prag za pomanjšanje slik
-
-Ob nalaganju WordPress pomanjša sliko, če je širina ali višina večja od praga, in pomanjšano kopijo uporabi kot polno velikost. Privzeti WordPressov prag je 2560 px. Ta vtičnik ga dvigne na 6000 px.
-
-To ne spremeni omejitve velikosti nalaganja (`upload_max_filesize`).

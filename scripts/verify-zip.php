@@ -16,7 +16,6 @@ if ( $zip->open( $zip_path ) !== true ) {
 $needles = array(
 	'nea-block-features/nea-block-features.php',
 	'nea-block-features/uninstall.php',
-	'nea-block-features/includes/_media.php',
 	'nea-block-features/options/_main.php',
 );
 $forbidden = array( 'node_modules/', 'phpunit/', 'tests/' );
